@@ -1,0 +1,20 @@
+p, pre, div {
+	text-align: center;
+}
+
+pre {
+		font-size: 75%;
+}
+table, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+}
+
+td {
+		width: 20px;
+		height: 20px;
+}
+
+table {
+		margin: 0 auto;
+}

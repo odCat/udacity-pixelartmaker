@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>Pixel Art Maker</title>
+		<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+                                                                     
+		<p><pre>
+
+██████╗ ██╗██╗  ██╗███████╗██╗          █████╗ ██████╗ ████████╗    ███╗   ███╗ █████╗ ██╗  ██╗███████╗██████╗ 
+██╔══██╗██║╚██╗██╔╝██╔════╝██║         ██╔══██╗██╔══██╗╚══██╔══╝    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝██╔══██╗
+██████╔╝██║ ╚███╔╝ █████╗  ██║         ███████║██████╔╝   ██║       ██╔████╔██║███████║█████╔╝ █████╗  ██████╔╝
+██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║         ██╔══██║██╔══██╗   ██║       ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝  ██╔══██╗
+██║     ██║██╔╝ ██╗███████╗███████╗    ██║  ██║██║  ██║   ██║       ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+ 		</pre></p>
+		<div>
+				<h3>Choose Grid Size</h3>
+				<form id="sizePicker">
+						Grid Height: 
+						<input type="number" id="inputHeight" name="gridHeight" min="1">
+						Grid Width: 
+						<input type="number" id="inputWidth" name="gridWidth" min="1">
+						<input type="button" value="Submit" id="drawGrid">
+				</form>
+				<h3>Pick a color: <input type="color" value="#000000" id="colorPicker"></h3>
+				
+		</div>
+		<p>Design Canvas</p>
+			<table id="pixelCanvas">
+			</table>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="designs.js"></script>
+</body>
+</html>
