@@ -1,59 +1,68 @@
+// Initialize background color
+const BGCOLOR="#ffffff"
 // Initialize the drawing color
-var fgColor=$("#colorPicker").val();
-// Initialize grid color
-var bgColor="#ffffff"
+let fgColor=$("#colorPicker").val();
 
-// Exent on submit button - choose size and draw grid
-$("input#drawGrid").click(function ()
-{
-		var height = $("#inputHeight").val();
-		var width = $("#inputWidth").val();
-		console.log("height = " + height + "; width = " + width);
-		if (height && width)
-		{
-				console.log("Log: on click: input grid");
-				if ($("tr td"))
-				{
-					deleteGrid();
-				}
-				makeGrid(height, width);
-		}
-		
-});
-
-// Event change draw color
-$(":input#colorPicker").on("change", function ()
-		{
-			fgColor = $("input#colorPicker").val();
-		});
-
-// Function to create the drawing grid
+/*
+ * Function to create the drawing grid
+ */
 function makeGrid(heigth, width) {
-		console.log("Log: makeGrid(): " + heigth + " " + width);	
-		for (var i = 0; i < heigth; i++)
-		{
-				$("#pixelCanvas").append("<tr class=\"gridRow\"></tr>");
-				console.log("Log: makeGrid(): Rows");
-		}
-		for (i = 0; i < width; i++)
-		{
-				$(".gridRow").each(function ()
-						{
-								$(this).append("<td class=\"gridCell\"></td>");
-						});
-				console.log("Log: makeGrid(): Cells");
-		}
+	console.log("Log: makeGrid(): " + heigth + " " + width);	
+	deleteGrid();
+	for (var i = 0; i < heigth; i++)
+	{
+		$("#pixelCanvas").append("<tr class=\"gridRow\"></tr>");
+		console.log("Log: makeGrid(): Rows" + i);
+	}
+	for (i = 0; i < width; i++)
+	{
+		$(".gridRow").each(function ()
+			{
+				$(this).append("<td class=\"gridCell\"></td>");
+			});
+		console.log("Log: makeGrid(): Cells" + i);
+	}
 }
 
-// Function to delete the drawing grid
+/*
+ * Function to delete the drawing grid
+ */
 function deleteGrid()
 {
-		$("tr").remove();
+	console.log("Log: deleteGrid()");
+	$(".gridRow").remove();
 }
 
-// Event - Draw
+/*
+ * Event on submit button click - choose size and draw grid
+ */
+$("#drawGrid").click(function ()
+	{
+		let height = $("#inputHeight").val();
+		let width = $("#inputWidth").val();
+		console.log("height = " + height + "; width = " + width);
+
+		/* TODO: add erroneous input handling */
+		if (height && width)
+		{
+			console.log("Log: on click: input grid");
+			makeGrid(height, width);
+		}
+	});
+
+/*
+ * Event on color change 
+ */
+$(":input#colorPicker").on("change", function ()
+	{
+		fgColor = $("input#colorPicker").val();
+	});
+
+/*
+ * Event on table cell click - change background color to selected color
+ */
 $("#pixelCanvas").on("click",".gridCell", function ()
-{
+	{
 		console.log("td: on click event");
 		$(this).css("background-color",fgColor);
-});
+	});

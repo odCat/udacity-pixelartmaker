@@ -1,20 +1,43 @@
-p, pre, div {
+.ascii-title {
+	padding-right: 3em;
+	padding-left: 3em;
+}
+
+body {
+	font-family: 'Press Start 2P', cursive;
+}
+
+button {
+    font-family:'Press Start 2P', cursive; 
+}
+
+table, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+input {
+	margin-top: 1em;
+}
+
+p, pre, div, td {
 	text-align: center;
 }
 
-pre {
-		font-size: 75%;
-}
-table, td {
-		border: 1px solid black;
-		border-collapse: collapse;
+#pixelCanvas {
+	table-layout: fixed;
+	overflow: scroll;
 }
 
-td {
-		width: 20px;
-		height: 20px;
+pre {
+	font-size: 75%;
+}
+
+.gridCell {
+	width: 20px;
+	height: 20px;
 }
 
 table {
-		margin: 0 auto;
+	margin: 0 auto;
 }

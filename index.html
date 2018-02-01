@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 		<meta charset="utf-8">
 		<title>Pixel Art Maker</title>
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 		<link rel="stylesheet" href="./style.css">
-</head>
-<body>
-                                                                     
-		<p><pre>
-
+	</head>
+	<body>
+		<table class="container">
+			<tr>
+				<!-- ASCII Art title -->
+				<td>
+					<!-- Added a tab after the opening <pre> tag to compensate for the indentation tabs before the closing </pre> -->
+					<pre class="ascii-title">	
 ██████╗ ██╗██╗  ██╗███████╗██╗          █████╗ ██████╗ ████████╗    ███╗   ███╗ █████╗ ██╗  ██╗███████╗██████╗ 
 ██╔══██╗██║╚██╗██╔╝██╔════╝██║         ██╔══██╗██╔══██╗╚══██╔══╝    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝██╔══██╗
 ██████╔╝██║ ╚███╔╝ █████╗  ██║         ███████║██████╔╝   ██║       ██╔████╔██║███████║█████╔╝ █████╗  ██████╔╝
 ██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║         ██╔══██║██╔══██╗   ██║       ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝  ██╔══██╗
 ██║     ██║██╔╝ ██╗███████╗███████╗    ██║  ██║██║  ██║   ██║       ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
- 		</pre></p>
-		<div>
-				<h3>Choose Grid Size</h3>
-				<form id="sizePicker">
-						Grid Height: 
-						<input type="number" id="inputHeight" name="gridHeight" min="1">
-						Grid Width: 
-						<input type="number" id="inputWidth" name="gridWidth" min="1">
+					</pre>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>Choose Grid Size</h3>
+					<form id="sizePicker">
+						<label for="inputHeight">Grid Height:</label>
+						<input type="number" id="inputHeight" name="inputHeight" min="1">
+						<br>
+						<label for="inputWidth">Grid Width: </label>
+						<input type="number" id="inputWidth" name="inputWidth" min="1">
+						<br>
 						<input type="button" value="Submit" id="drawGrid">
-				</form>
-				<h3>Pick a color: <input type="color" value="#000000" id="colorPicker"></h3>
-				
-		</div>
+					</form>
+					<h3>Pick a color: <input type="color" value="#000000" id="colorPicker"></h3>
+				</td>
+			</tr>
+		</table>
 		<p>Design Canvas</p>
-			<table id="pixelCanvas">
-			</table>
+		<table id="pixelCanvas">
+		</table>
+		<!-- Adding jQuery script -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Including the project JavaScript file -->
 		<script src="designs.js"></script>
-</body>
+	</body>
 </html>
