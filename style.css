@@ -7,8 +7,7 @@ body {
 	font-family: 'Press Start 2P', cursive;
 }
 
-.drawGrid {
-	font-family: 'Press Start 2P', cursive;
+.draw-grid-button {
 	padding-top: 3px;
 }
 
@@ -22,18 +21,14 @@ input {
 	padding-left: 2px;
 	padding-right: 2px;
 	border: 2px solid black;
+	font-family: 'Press Start 2P', cursive;
 }
 
 .input-height, .input-width {
 	background-color: white;
-	font-family: 'Press Start 2P', cursive;
 	color: black;
 	width: 10em;
 	padding-top: 2px;
-}
-
-label {
-	display: inline-block;
 }
 
 p, pre, div, td {
@@ -44,7 +39,7 @@ pre {
 	font-size: 75%;
 }
 
-.gridCell {
+.grid-cell {
 	width: 20px;
 	height: 20px;
 }
