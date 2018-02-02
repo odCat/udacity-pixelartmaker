@@ -25,21 +25,21 @@
 			<tr>
 				<td>
 					<h3>Choose Grid Size</h3>
-					<form id="sizePicker">
+					<form class="sizePicker">
 						<label for="inputHeight">Grid Height:</label>
-						<input type="number" id="inputHeight" name="inputHeight" min="1">
+						<input type="number" class="input-height" name="inputHeight" min="1" size="5">
 						<br>
-						<label for="inputWidth">Grid Width: </label>
-						<input type="number" id="inputWidth" name="inputWidth" min="1">
+						<label for="inputWidth">Grid Width :</label>
+						<input type="number" class="input-width" name="inputWidth" min="1" size="5">
 						<br>
-						<input type="button" value="Submit" id="drawGrid">
+						<input type="button" value="Submit" class="drawGrid">
 					</form>
-					<h3>Pick a color: <input type="color" value="#000000" id="colorPicker"></h3>
+					<h3>Pick a color: <input type="color" value="#000000" class="colorPicker"></h3>
 				</td>
 			</tr>
 		</table>
 		<p>Design Canvas</p>
-		<table id="pixelCanvas">
+		<table class="pixelCanvas">
 		</table>
 		<!-- Adding jQuery script -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

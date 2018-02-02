@@ -7,8 +7,9 @@ body {
 	font-family: 'Press Start 2P', cursive;
 }
 
-button {
-    font-family:'Press Start 2P', cursive; 
+.drawGrid {
+	font-family: 'Press Start 2P', cursive;
+	padding-top: 3px;
 }
 
 table, td {
@@ -18,15 +19,25 @@ table, td {
 
 input {
 	margin-top: 1em;
+	padding-left: 2px;
+	padding-right: 2px;
+	border: 2px solid black;
+}
+
+.input-height, .input-width {
+	background-color: white;
+	font-family: 'Press Start 2P', cursive;
+	color: black;
+	width: 10em;
+	padding-top: 2px;
+}
+
+label {
+	display: inline-block;
 }
 
 p, pre, div, td {
 	text-align: center;
-}
-
-#pixelCanvas {
-	table-layout: fixed;
-	overflow: scroll;
 }
 
 pre {

@@ -1,7 +1,7 @@
 // Initialize background color
 const BGCOLOR="#ffffff"
 // Initialize the drawing color
-let fgColor=$("#colorPicker").val();
+let fgColor=$(".colorPicker").val();
 
 /*
  * Function to create the drawing grid
@@ -11,7 +11,7 @@ function makeGrid(heigth, width) {
 	deleteGrid();
 	for (var i = 0; i < heigth; i++)
 	{
-		$("#pixelCanvas").append("<tr class=\"gridRow\"></tr>");
+		$(".pixelCanvas").append("<tr class=\"gridRow\"></tr>");
 		console.log("Log: makeGrid(): Rows" + i);
 	}
 	for (i = 0; i < width; i++)
@@ -36,11 +36,12 @@ function deleteGrid()
 /*
  * Event on submit button click - choose size and draw grid
  */
-$("#drawGrid").click(function ()
+$(".drawGrid").click(function ()
 	{
-		let height = $("#inputHeight").val();
-		let width = $("#inputWidth").val();
+		let height = $(".input-height").val();
+		let width = $(".input-width").val();
 		console.log("height = " + height + "; width = " + width);
+		deleteGrid();
 
 		/* TODO: add erroneous input handling */
 		if (height && width)
@@ -53,15 +54,15 @@ $("#drawGrid").click(function ()
 /*
  * Event on color change 
  */
-$(":input#colorPicker").on("change", function ()
+$(".colorPicker").on("change", function ()
 	{
-		fgColor = $("input#colorPicker").val();
+		fgColor = $(".colorPicker").val();
 	});
 
 /*
  * Event on table cell click - change background color to selected color
  */
-$("#pixelCanvas").on("click",".gridCell", function ()
+$(".pixelCanvas").on("click",".gridCell", function ()
 	{
 		console.log("td: on click event");
 		$(this).css("background-color",fgColor);
