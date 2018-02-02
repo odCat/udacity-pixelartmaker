@@ -36,7 +36,8 @@ p, pre, div, td {
 }
 
 pre {
-	font-size: 75%;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 60%;
 }
 
 .grid-cell {
