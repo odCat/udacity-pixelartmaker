@@ -9,12 +9,10 @@ let isGrid=Boolean("falst");
  * Function to create the drawing grid
  */
 function makeGrid(heigth, width) {
-	console.log("Log: makeGrid(): " + heigth + " " + width);
 	deleteGrid();
 	for (var i = 0; i < heigth; i++)
 	{
 		$(".pixel-canvas").append("<tr class=\"gridRow\"></tr>");
-		console.log("Log: makeGrid(): Rows" + i);
 	}
 	for (i = 0; i < width; i++)
 	{
@@ -22,7 +20,6 @@ function makeGrid(heigth, width) {
 			{
 				$(this).append("<td class=\"grid-cell\"></td>");
 			});
-		console.log("Log: makeGrid(): Cells" + i);
 	}
 }
 
@@ -31,7 +28,6 @@ function makeGrid(heigth, width) {
  */
 function deleteGrid()
 {
-	console.log("Log: deleteGrid()");
 	$(".gridRow").remove();
 }
 
@@ -47,7 +43,6 @@ $(".draw-grid-button").click(function ()
 		$(".input-height").val("");
 		$(".input-width").val("");
 
-		console.log("height = " + height + "; width = " + width);
 
 		// Delete grid if grid exists
 		if (isGrid)
@@ -58,7 +53,6 @@ $(".draw-grid-button").click(function ()
 		/* TODO: add erroneous input handling */
 		if (height && width)
 		{
-			console.log("Log: on click: input grid");
 			makeGrid(height, width);
 		}
 	});
@@ -76,6 +70,5 @@ $(".color-picker").on("change", function ()
  */
 $(".pixel-canvas").on("click",".grid-cell", function ()
 	{
-		console.log("td: on click event");
 		$(this).css("background-color",fgColor);
 	});

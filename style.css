@@ -1,50 +1,60 @@
+/* Title */
 .ascii-title {
-	padding-right: 3em;
-	padding-left: 3em;
+	padding: 0 3em 0 3em;
+	font: 55% "Courier New", Courier, monospace;
 }
 
+/* Body */
 body {
-	font-family: 'Press Start 2P', cursive;
+	font-family: "Press Start 2P", cursive;
+	overflow: scroll;
 }
 
-.draw-grid-button {
-	padding-top: 3px;
-}
-
-table, td {
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-
-input {
-	margin-top: 1em;
-	padding-left: 2px;
-	padding-right: 2px;
-	border: 2px solid black;
-	font-family: 'Press Start 2P', cursive;
-}
-
-.input-height, .input-width {
-	background-color: white;
-	color: black;
-	width: 10em;
-	padding-top: 2px;
-}
-
-p, pre, div, td {
+/* Content */
+p,
+pre,
+div,
+td {
 	text-align: center;
-}
-
-pre {
-	font-family: "Courier New", Courier, monospace;
-	font-size: 60%;
-}
-
-.grid-cell {
-	width: 20px;
-	height: 20px;
 }
 
 table {
 	margin: 0 auto;
+}
+
+table,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+/* Draw options */
+input {
+	border: 2px solid black;
+}
+
+input[type=number],
+input[type=button] {
+	margin-top: 1em;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.input-height,
+.input-width {
+	background-color: white;
+	color: black;
+	width: 10em;
+	padding: 2px 2px 0 2px;
+}
+
+/* Submit/draw button */
+.draw-grid-button {
+	padding: 3px 2px 1px 3px;
+}
+
+/* Draw grid */
+.grid-cell {
+	width: 15px;
+	min-width: 15px;
+	height: 15px;
 }
