@@ -2,33 +2,46 @@
 const BGCOLOR="#ffffff"
 // Initialize the drawing color
 let fgColor=$(".color-picker").val();
-// Initialize grid flag
-let isGrid=Boolean("falst");
+// Initialize canvas flag
+let isCanvas=Boolean(false);
+// Draw canvas element
+let canvas = $(".pixel-canvas");
+// Draw canvas size selectors
+let inputHeight = $(".input-height");
+let inputWidth = $(".input-width");
 
 /*
- * Function to create the drawing grid
+ * Function to create the drawing canvas
  */
-function makeGrid(heigth, width) {
-	deleteGrid();
-	for (var i = 0; i < heigth; i++)
+function makeCanvas(heigth, width) {
+	// Create rows
+	for (let i = 0; i < heigth; i++)
 	{
-		$(".pixel-canvas").append("<tr class=\"gridRow\"></tr>");
+		canvas.append("<tr class=\"gridRow\"></tr>");
 	}
+
+	// Create cells for every row
+	let rows = $(".gridRow");
 	for (i = 0; i < width; i++)
 	{
-		$(".gridRow").each(function ()
+		rows.each(function ()
 			{
+				/* TODO: understadnd how closures works; maybe update this */
 				$(this).append("<td class=\"grid-cell\"></td>");
 			});
 	}
+
+	// Switch canvas flag
+	isCanvas = true;
 }
 
 /*
  * Function to delete the drawing grid
  */
-function deleteGrid()
+function deleteCanvas()
 {
-	$(".gridRow").remove();
+	canvas.html("");
+	isCanvas = false; // Switch canvas flag
 }
 
 /*
@@ -36,24 +49,24 @@ function deleteGrid()
  */
 $(".draw-grid-button").click(function ()
 	{
-		let height = $(".input-height").val();
-		let width = $(".input-width").val();
+		let height = Number(inputHeight.val());
+		let width = Number(inputWidth.val());
 		
 		// Reset input text boxes values
-		$(".input-height").val("");
-		$(".input-width").val("");
+		inputHeight.val("");
+		inputWidth.val("");
 
 
 		// Delete grid if grid exists
-		if (isGrid)
+		if (isCanvas)
 		{
-		deleteGrid();
+			deleteCanvas();
 		}
 
 		/* TODO: add erroneous input handling */
 		if (height && width)
 		{
-			makeGrid(height, width);
+			makeCanvas(height, width);
 		}
 	});
 
@@ -68,7 +81,7 @@ $(".color-picker").on("change", function ()
 /*
  * Event on table cell click - change background color to selected color
  */
-$(".pixel-canvas").on("click",".grid-cell", function ()
+canvas.on("click",".grid-cell", function ()
 	{
 		$(this).css("background-color",fgColor);
 	});

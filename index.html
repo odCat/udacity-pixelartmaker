@@ -7,19 +7,18 @@
 		<link rel="stylesheet" href="./style.css">
 	</head>
 	<body>
-		<table>
+		<table class="no-scroll">
 			<tr>
 				<!-- ASCII Art title -->
 				<td>
-					<!-- Added a tab after the opening <pre> tag to compensate for the indentation tabs before the closing </pre> -->
-					<pre class="ascii-title">	
+					<pre class="ascii-title">
 ██████╗ ██╗██╗  ██╗███████╗██╗          █████╗ ██████╗ ████████╗    ███╗   ███╗ █████╗ ██╗  ██╗███████╗██████╗ 
 ██╔══██╗██║╚██╗██╔╝██╔════╝██║         ██╔══██╗██╔══██╗╚══██╔══╝    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝██╔══██╗
 ██████╔╝██║ ╚███╔╝ █████╗  ██║         ███████║██████╔╝   ██║       ██╔████╔██║███████║█████╔╝ █████╗  ██████╔╝
 ██╔═══╝ ██║ ██╔██╗ ██╔══╝  ██║         ██╔══██║██╔══██╗   ██║       ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝  ██╔══██╗
 ██║     ██║██╔╝ ██╗███████╗███████╗    ██║  ██║██║  ██║   ██║       ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗██║  ██║
 ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
-					</pre>
+</pre>
 				</td>
 			</tr>
 			<tr>
@@ -27,10 +26,10 @@
 					<h3>Choose Grid Size</h3>
 					<form class="sizePicker">
 						<label for="inputHeight">Grid Height:</label>
-						<input type="number" class="input-height" name="inputHeight" min="1" size="5">
+						<input type="number" class="input-height" name="inputHeight" min="1" size="5" value="100">
 						<br>
 						<label for="inputWidth">Grid Width :</label>
-						<input type="number" class="input-width" name="inputWidth" min="1" size="5">
+						<input type="number" class="input-width" name="inputWidth" min="1" size="5" value="100">
 						<br>
 						<input type="button" value="Submit" class="draw-grid-button">
 					</form>
@@ -39,6 +38,7 @@
 			</tr>
 		</table>
 		<p>Design Canvas</p>
+		<!-- Table used as drawing canvas -->
 		<table class="pixel-canvas">
 		</table>
 		<!-- Adding jQuery script -->
