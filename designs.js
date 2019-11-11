@@ -9,7 +9,8 @@ let inputHeight = $(".input-height");
 let inputWidth = $(".input-width");
 
 /*
- * Function to create the drawing canvas */
+ * Function to create the drawing canvas
+ */
 function makeCanvas(heigth, width) {
 	// Create rows
 	for (let i = 0; i < heigth; i++)
