@@ -7,7 +7,7 @@ Scholarship for the Front-End Web Dev class offered by Udacity.
 
 https://odcat.github.io/udacity-pixelartmaker/
 
-# TODO
+## TODO
 
 * Optimize the page.
 * Allow click and drag for continuous drawing.
